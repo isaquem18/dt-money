@@ -3,13 +3,17 @@ import React from 'react';
 import { GlobalStyle } from './styles/GlobalStyle';
 import { BrowserRouter } from 'react-router-dom';
 import { Routes } from './routes';
+import { TransactionsProvider } from './Contexts/TransactionsContext';
 
 function App() {
+
   return (
-    <BrowserRouter>
-      <GlobalStyle />
-      <Routes />
-    </BrowserRouter>
+    <TransactionsProvider>
+      <BrowserRouter>
+        <GlobalStyle />
+        <Routes />
+      </BrowserRouter>
+    </TransactionsProvider>
   );
 }
 
